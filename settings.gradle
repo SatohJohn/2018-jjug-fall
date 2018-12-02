@@ -1,5 +1,0 @@
-rootProject.name = 'jjug2018-fall'
-include 'kotlin-sample'
-include 'spring-kotlin-sample'
-
-
