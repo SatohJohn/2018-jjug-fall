@@ -3,7 +3,7 @@ package examples;
 public class JavaComponent {
 
     private static StringData getStringData() {
-        var str = "string";
+        String str = "string";
         return new StringData(str, str.length());
     }
 

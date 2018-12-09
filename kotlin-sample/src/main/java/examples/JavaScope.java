@@ -9,7 +9,7 @@ public class JavaScope {
         }
     }
     public static void main(String[] args) {
-        var param = "parameter";
+        String param = "parameter";
         System.out.println(param);
         TestObject result = create(param.toUpperCase());
     }

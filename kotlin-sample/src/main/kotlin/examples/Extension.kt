@@ -1,20 +1,16 @@
 package examples
 
-import Account
-import AccountService
+class Account
 
-fun Account?.isNotMember() = true
+fun Account?.isExist() = true
 
 fun main(args: Array<String>) {
 
-    val accountService = AccountService()
+    val account = if (args.size > 1) Account() else null
 
-    val account = accountService.findById()
-    // この時点ではAccount!となり、Accountはnullを返す可能性もある型だし、そうでもないし、、、みたいな何なのかわからない状態になる
-    if (account.isNotMember()) {
-        print("アカウント見つからなかったよ")
+    if (account.isExist()) {
+        print("存在するアカウントだよ")
     } else {
-        print("アカウント見つかったよ")
+        print("アカウント")
     }
-
 }
