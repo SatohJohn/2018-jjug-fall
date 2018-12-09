@@ -1,3 +1,8 @@
+package examples
+
+import Account
+import AccountService
+
 fun Account?.isNotMember() = true
 
 fun main(args: Array<String>) {

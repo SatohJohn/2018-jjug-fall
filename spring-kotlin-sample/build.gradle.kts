@@ -43,8 +43,10 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("com.fasterxml.jackson.module:jackson-module-kotlin")
-    compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    compile("org.jetbrains.kotlin:kotlin-reflect")
+    compile(kotlin("stdlib"))
+    compile(kotlin("reflect"))
     runtimeOnly("com.h2database:h2")
+    compileOnly("org.projectlombok:lombok:1.18.4")
+    kapt("org.projectlombok:lombok:1.18.4")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

@@ -1,3 +1,7 @@
+package examples
+
+import Account
+
 fun let(id: String): Account {
     return id.let {
         val account = Account()
