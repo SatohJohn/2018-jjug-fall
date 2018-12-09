@@ -2,15 +2,15 @@ package examples
 
 class Account
 
-fun Account?.isExist() = true
+fun Account?.isExist() = this != null
 
 fun main(args: Array<String>) {
 
-    val account = if (args.size > 1) Account() else null
+    val account: Account? = if (args.isNotEmpty()) Account() else null
 
     if (account.isExist()) {
         print("存在するアカウントだよ")
     } else {
-        print("アカウント")
+        print("存在しないアカウントだよ")
     }
 }
