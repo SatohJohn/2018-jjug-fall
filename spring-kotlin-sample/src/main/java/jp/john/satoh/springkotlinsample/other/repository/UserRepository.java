@@ -19,4 +19,13 @@ public class UserRepository {
     public List<User> getAll() {
         return list;
     }
+
+    public User findByUid(String uid) {
+        for (User user: list) {
+            if (uid.equals(user.getUid())) {
+                return user;
+            }
+        }
+        return null;
+    }
 }

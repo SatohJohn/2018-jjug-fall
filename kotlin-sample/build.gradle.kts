@@ -13,6 +13,7 @@ repositories {
 
 dependencies {
     compile(kotlin("stdlib"))
+    compileOnly("org.projectlombok:lombok:1.18.4")
 }
 
 java {

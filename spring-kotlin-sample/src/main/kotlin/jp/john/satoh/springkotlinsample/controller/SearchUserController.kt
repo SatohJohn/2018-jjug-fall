@@ -1,7 +1,6 @@
 package jp.john.satoh.springkotlinsample.controller
 
 import jp.john.satoh.springkotlinsample.controller.response.UserSearchData
-import jp.john.satoh.springkotlinsample.other.domain.User
 import jp.john.satoh.springkotlinsample.service.SearchUserService
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping
@@ -17,15 +16,25 @@ class SearchUserController(
 
     @GetMapping("list")
     @ResponseBody
-    fun search(@RequestParam("name", required = false) name: String?): List<UserSearchData> {
-        // userのリストを返却する
-        // searchUserService.searchByName(name) はだめですよ
-        val user1 = User("", "", "")
-        user1.mailAddress = ""
+    fun list(
+            @RequestParam("name", required = false) name: String?
+    ): List<UserSearchData> {
         return when {
             !name.isNullOrBlank() -> searchUserService.searchByName(name)
             else -> emptyList()
         }.map { user -> UserSearchData(user.name, user.mailAddress) }
+    }
+
+    @GetMapping("/")
+    @ResponseBody
+    fun mono(
+            @RequestParam("uid", required = false) uid: String?
+    ): UserSearchData {
+        return uid?.let {
+            searchUserService.searchByUid(it)?.let { user ->
+                UserSearchData(user.name, user.mailAddress)
+            }
+        } ?: UserSearchData.createEmpty()
     }
 
 

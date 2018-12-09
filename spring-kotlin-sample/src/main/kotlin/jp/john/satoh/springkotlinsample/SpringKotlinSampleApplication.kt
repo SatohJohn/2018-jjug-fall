@@ -8,6 +8,4 @@ class SpringKotlinSampleApplication
 
 fun main(args: Array<String>) {
     runApplication<SpringKotlinSampleApplication>(*args)
-
-
 }

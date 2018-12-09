@@ -46,7 +46,5 @@ dependencies {
     compile(kotlin("stdlib"))
     compile(kotlin("reflect"))
     runtimeOnly("com.h2database:h2")
-    compileOnly("org.projectlombok:lombok:1.18.4")
-    kapt("org.projectlombok:lombok:1.18.4")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
