@@ -7,7 +7,11 @@ data class User(
 )
 
 fun main(args: Array<String>) {
-    val (uid, name) = User("uid", "name", "mailAddress")
-    println("${uid}, ${name}")
+//    var (uid, name) = User("uid", "name", "mailAddress")
+//    println("${uid}, ${name}")
+//    var (_, name) = User("uid", "name", "mailAddress")
+//    println("${name}")
+    var (name) = User("uid", "name", "mailAddress")
+    println("${name}")
 }
 

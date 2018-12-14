@@ -20,7 +20,11 @@ class SearchUserService(
         // コンパイラとしては val result: User! となっている
         val result = userRepository.findByUid(uid)
 
-        // println(result.mailAddress) では落ちる可能性がある
+        // IllegalStateExceptionが投げられる
+        // val result: User = userRepository.findByUid(uid)
+
+        // IllegalStateExceptionが投げられる
+        // println(result.mailAddress)
         println(result?.mailAddress)
         return result
     }

@@ -1,5 +1,8 @@
 package jp.john.satoh.springkotlinsample.other.domain;
 
+/**
+ * Userを表すValue Objectです
+ */
 public class User {
     private String uid;
     private String name;

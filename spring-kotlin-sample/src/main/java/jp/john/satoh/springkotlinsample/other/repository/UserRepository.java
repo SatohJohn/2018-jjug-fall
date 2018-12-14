@@ -16,10 +16,19 @@ public class UserRepository {
         this.add(new User("uid5", "mark", "mark@hotmail.co.jp"));
     }};
 
+    /**
+     * 全{@link User}を取得する
+     * @return
+     */
     public List<User> getAll() {
         return list;
     }
 
+    /**
+     * uidでrepositoryを検索する
+     * @param uid
+     * @return {@code uid}に対する{@link User}が存在しない場合はnullを返す
+     */
     public User findByUid(String uid) {
         for (User user: list) {
             if (uid.equals(user.getUid())) {
